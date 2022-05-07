@@ -6,7 +6,7 @@ import FORTMATIC_ICON_URL from '../assets/images/fortmaticIcon.png'
 import METAMASK_ICON_URL from '../assets/images/metamask.png'
 import UNSTOPPABLE_ICON_URL from '../assets/images/unstoppable.png'
 import WALLETCONNECT_ICON_URL from '../assets/images/walletConnectIcon.svg'
-import { fortmatic, injected, walletconnect, walletlink } from '../connectors'
+import { fortmatic, injected, uauth, walletconnect, walletlink } from '../connectors'
 
 interface WalletInfo {
   connector?: AbstractConnector
@@ -74,7 +74,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     mobile: true,
   },
   UNSTOPPABLE: {
-    connector: injected,
+    connector: uauth,
     name: 'Unstoppable Domains',
     iconURL: UNSTOPPABLE_ICON_URL,
     description: 'Login with Unstoppable',

@@ -1,5 +1,7 @@
 import { Web3Provider } from '@ethersproject/providers'
 import { SafeAppConnector } from '@gnosis.pm/safe-apps-web3-react'
+import { UAuthConnector } from '@uauth/web3-react'
+import type { AbstractConnector } from '@web3-react/abstract-connector'
 import { ALL_SUPPORTED_CHAIN_IDS, SupportedChainId } from 'constants/chains'
 import { INFURA_NETWORK_URLS } from 'constants/infura'
 import { InjectedConnector } from 'web3-react-injected-connector'
@@ -47,3 +49,18 @@ export const walletlink = new WalletLinkConnector({
   appLogoUrl: UNISWAP_LOGO_URL,
   supportedChainIds: ALL_SUPPORTED_CHAIN_IDS,
 })
+
+export const uauth = new UAuthConnector({
+  clientID: process.env.REACT_APP_CLIENT_ID,
+  redirectUri: 'http://localhost:3000',
+  scope: 'openid email wallet',
+  connectors: { injected, walletconnect },
+})
+
+const connectors: Record<string, AbstractConnector> = {
+  injected,
+  walletconnect,
+  uauth,
+}
+
+export default connectors
