@@ -4,6 +4,7 @@ import INJECTED_ICON_URL from '../assets/images/arrow-right.svg'
 import COINBASE_ICON_URL from '../assets/images/coinbaseWalletIcon.svg'
 import FORTMATIC_ICON_URL from '../assets/images/fortmaticIcon.png'
 import METAMASK_ICON_URL from '../assets/images/metamask.png'
+import UNSTOPPABLE_ICON_URL from '../assets/images/unstoppable.png'
 import WALLETCONNECT_ICON_URL from '../assets/images/walletConnectIcon.svg'
 import { fortmatic, injected, walletconnect, walletlink } from '../connectors'
 
@@ -71,5 +72,13 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     href: null,
     color: '#6748FF',
     mobile: true,
+  },
+  UNSTOPPABLE: {
+    connector: injected,
+    name: 'Unstoppable Domains',
+    iconURL: UNSTOPPABLE_ICON_URL,
+    description: 'Login with Unstoppable',
+    href: null,
+    color: '#4c47f7',
   },
 }
